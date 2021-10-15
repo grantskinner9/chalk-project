@@ -9,7 +9,7 @@ function App() {
   const [ data, setData ] = useState(null);
 
   useEffect(() => {
-    fetch('https://cdn.chalk.com/misc/sample_teachers.json?id=10')
+    fetch('https://cdn.chalk.com/misc/sample_teachers.json')
     .then(response => response.json())
     .then(data => {
       setData(data)

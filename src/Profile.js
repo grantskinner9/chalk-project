@@ -1,24 +1,37 @@
 import React from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const Profile = (props) => {
 
   const info = useParams();
-  
 
+  const [ teacherInfo, setTeacherInfo ] = useState(null);
+  
   useEffect(() => {
-    props.data.forEach(data => {
-      if (data.id == info.id) {
-        console.log(data)
+    fetch('https://cdn.chalk.com/misc/sample_teachers.json')
+    .then(response => response.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].id == info.id) {
+          setTeacherInfo(data[i])
+          break;
+        }
       }
     })
+  }, [info.id])
 
-  })
+  console.log(teacherInfo)
+
 
   return (
-    // <p>{props.id.first_name} {}</p>
-    <p>Grant</p>
+    <div>
+      {
+        teacherInfo ?
+        <p>{teacherInfo.first_name} {teacherInfo.last_name}</p> :
+        null
+      }
+    </div>
   )
 }
 
