@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import avatar from './assets/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import List from './List';
+import Profile from './Profile';
 import './styles/App.css'
 
 function App() {
@@ -7,37 +9,36 @@ function App() {
   const [ data, setData ] = useState(null);
 
   useEffect(() => {
-    fetch('https://cdn.chalk.com/misc/sample_teachers.json')
+    fetch('https://cdn.chalk.com/misc/sample_teachers.json?id=10')
     .then(response => response.json())
     .then(data => {
       setData(data)
     })
   }, [])
 
+  const [ id, setId ] = useState(null)
+
+  const info = (param) => {
+    setId(param)
+  }
+
 
   return (
-    <div className="App">
-      {
-        data ?
-        data.map((teacher, index) => {
-          console.log(teacher)
-          return(
-            <ul key={index} >
-              <li className="teacher-display">
-                {
-                  teacher.avatar ?
-                  <img src={teacher.avatar} alt={teacher.first_name} /> :
-                  <img src={avatar} alt={teacher.first_name} />
-                }
-                <p>{teacher.first_name} {teacher.last_name}</p>
-                <p>{teacher.email}</p>
-              </li>
-            </ul>
-          )
-        }) :
-        null
-      }
-    </div>
+    <Router>
+
+      <Route exact path="/" render={() => 
+        <List
+        info={info}
+        data={data}/>
+      }/>
+
+      <Route path="/profile/:id">
+        <Profile 
+        data={data}/>
+      </Route>
+     
+
+    </Router>
   );
 }
 
