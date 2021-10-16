@@ -1,10 +1,7 @@
 import React from "react";
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import avatar from './assets/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png'
 
 const List = (props) => {
-
 
   return (
     <ul>
@@ -16,8 +13,8 @@ const List = (props) => {
               <Link to={`/profile/${teacher.id}`}>
                 {
                   teacher.avatar ?
-                  <img src={teacher.avatar} alt={teacher.first_name} /> :
-                  <img src={avatar} alt={teacher.first_name} />
+                  <img src={teacher.avatar} alt={`${teacher.first_name} ${teacher.last_name}`} /> :
+                  null
                 }
                 <p>{teacher.first_name} {teacher.last_name}</p>
                 <p>{teacher.email}</p>

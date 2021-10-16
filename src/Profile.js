@@ -13,8 +13,11 @@ const Profile = (props) => {
     .then(response => response.json())
     .then(data => {
       for (let i = 0; i < data.length; i++) {
+        if(data[i].avatar === null) {
+          data[i].avatar = props.avatar;
+        }
         if (data[i].id == info.id) {
-          setTeacherInfo(data[i])
+          setTeacherInfo(data[i]);
           break;
         }
       }
@@ -28,7 +31,24 @@ const Profile = (props) => {
     <div>
       {
         teacherInfo ?
-        <p>{teacherInfo.first_name} {teacherInfo.last_name}</p> :
+        <div>
+          <p>{teacherInfo.first_name} {teacherInfo.last_name}</p>
+          <p>{teacherInfo.email}</p>
+          <ul>
+            {
+              teacherInfo.classes ?
+              teacherInfo.classes.map((subject, index) => {
+                return (
+                  <li key={index}>
+                    <p>{subject.class}</p>
+                  </li>
+                )
+              }) :
+              null
+            }
+          </ul>
+          <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
+        </div> :
         null
       }
     </div>
