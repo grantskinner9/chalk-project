@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const List = (props) => {
 
   return (
-    <ul>
+    <ul className="wrapper teacher-list">
       {
         props.data ?
         props.data.map((teacher, index) => {
@@ -13,11 +13,15 @@ const List = (props) => {
               <Link to={`/profile/${teacher.id}`}>
                 {
                   teacher.avatar ?
-                  <img src={teacher.avatar} alt={`${teacher.first_name} ${teacher.last_name}`} /> :
+                  <div className="image-container">
+                    <img src={teacher.avatar} alt={`${teacher.first_name} ${teacher.last_name}`} />
+                  </div> :
                   null
                 }
-                <p>{teacher.first_name} {teacher.last_name}</p>
-                <p>{teacher.email}</p>
+                <div className="text-container">
+                  <p>{teacher.first_name} {teacher.last_name}</p>
+                  <p>{teacher.email}</p>
+                </div>
               </Link>
             </li>
           )

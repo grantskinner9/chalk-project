@@ -1,11 +1,43 @@
-.teacher-display {
+main {
+  background-color: rgb(40, 40, 40);
+  font-family: "Montserrat", sans-serif;
+}
+
+.teacher-list {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 100px 0;
-  border-bottom: 1px solid black;
-  img {
-    height: auto;
-    width: 300px;
+  flex-wrap: wrap;
+}
+.teacher-display {
+  width: calc((100% / 3) - 20px);
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border: 1px solid black;
+  background-color: #f6f4f2;
+  text-align: center;
+
+  .image-container {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 80%;
+    }
+  }
+  .text-container {
+    padding: 20px 0;
+  }
+  a {
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

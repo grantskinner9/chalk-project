@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import List from './List';
 import Profile from './Profile';
-import avatar from './assets/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png';
+import avatar from './assets/pngegg.png';
 import './styles/App.css'
 
 function App() {
@@ -69,33 +69,34 @@ function App() {
 
   return (
     <Router>
-      <form action="#" method="#" className="myForm" name="myForm">
-      <label htmlFor="order"></label>
-        <select name="order" id="order" onChange={handleOrder}>
-            <option value disabled selected>SELECT ORDER</option>
-            <option value="1">First Name ASC.</option>
-            <option value="2">First Name DESC.</option>
-            <option value="3">Last Name ASC.</option>
-            <option value="4">Last Name DESC.</option>
-        </select>
-      </form>
+      <main>
+        <form action="#" method="#" className="myForm" name="myForm">
+        <label htmlFor="order"></label>
+          <select name="order" id="order" onChange={handleOrder}>
+              <option value disabled selected>SELECT ORDER</option>
+              <option value="1">First Name ASC.</option>
+              <option value="2">First Name DESC.</option>
+              <option value="3">Last Name ASC.</option>
+              <option value="4">Last Name DESC.</option>
+          </select>
+        </form>
 
-      <form className="search-form">
-        <label htmlFor="search"></label>
-        <input type="text" className="search" placeholder="search" onChange={handleChange} value={userInput} />
-      </form>
+        <form className="search-form">
+          <label htmlFor="search"></label>
+          <input type="text" className="search" placeholder="search" onChange={handleChange} value={userInput} />
+        </form>
 
-      <Route exact path="/"> 
-        <List
-        data={data}/>
-      </ Route>
+        <Route exact path="/"> 
+          <List
+          data={data}/>
+        </ Route>
 
-      <Route path="/profile/:id">
-        <Profile 
-        avatar={avatar}/>
-      </Route>
-     
-
+        <Route path="/profile/:id">
+          <Profile 
+          avatar={avatar}/>
+        </Route>
+      
+      </main>
     </Router>
   );
 }
