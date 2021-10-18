@@ -1,0 +1,30 @@
+.teacher-profile {
+  height: 100vh;
+  background-color: rgb(40, 40, 40);
+}
+.teacher-card {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: center;
+}
+.profile-image-section {
+  margin-top: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 60%;
+  }
+}
+.profile-text-section {
+  width: 60%;
+  background-color: white;
+  p {
+    padding: 20px 0;
+  }
+}

@@ -1,8 +1,9 @@
 import React from "react";
+import avatar from "./assets/pngegg.png"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const Profile = (props) => {
+const Profile = () => {
 
   const info = useParams();
 
@@ -14,7 +15,7 @@ const Profile = (props) => {
     .then(data => {
       for (let i = 0; i < data.length; i++) {
         if(data[i].avatar === null) {
-          data[i].avatar = props.avatar;
+          data[i].avatar = avatar;
         }
         if (data[i].id == info.id) {
           setTeacherInfo(data[i]);
@@ -24,30 +25,33 @@ const Profile = (props) => {
     })
   }, [info.id])
 
-  console.log(teacherInfo)
-
 
   return (
-    <div>
+    <div className="teacher-profile">
       {
         teacherInfo ?
-        <div>
-          <p>{teacherInfo.first_name} {teacherInfo.last_name}</p>
-          <p>{teacherInfo.email}</p>
-          <ul>
-            {
-              teacherInfo.classes ?
-              teacherInfo.classes.map((subject, index) => {
-                return (
-                  <li key={index}>
-                    <p>{subject.class}</p>
-                  </li>
-                )
-              }) :
-              null
-            }
-          </ul>
-          <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
+        <div className="teacher-card">
+          <div className="profile-image-section">
+            <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
+          </div>
+          <div className="profile-text-section">
+            <p>First Name: {teacherInfo.first_name}</p>
+            <p>Last Name: {teacherInfo.last_name}</p>
+            <p>Email Address: {teacherInfo.email}</p>
+            <ul>
+              {
+                teacherInfo.classes ?
+                teacherInfo.classes.map((subject, index) => {
+                  return (
+                    <li key={index}>
+                      <p>{subject.class}</p>
+                    </li>
+                  )
+                }) :
+                null
+              }
+            </ul>
+          </div>
         </div> :
         null
       }

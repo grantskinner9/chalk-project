@@ -1,6 +1,9 @@
 main {
-  background-color: rgb(40, 40, 40);
   font-family: "Montserrat", sans-serif;
+}
+
+.app-list {
+  background-color: rgb(40, 40, 40);
 }
 
 .teacher-list {
@@ -16,8 +19,8 @@ main {
   border: 1px solid black;
   background-color: #f6f4f2;
   text-align: center;
-
   .image-container {
+    margin-top: 20px;
     width: 200px;
     height: 200px;
     background-color: white;
@@ -26,11 +29,16 @@ main {
     justify-content: center;
     align-items: center;
     img {
-      width: 80%;
+      width: 60%;
     }
   }
   .text-container {
     padding: 20px 0;
+    word-break: break-all;
+    .teacher-email {
+      font-size: 0.8rem;
+      padding-top: 20px;
+    }
   }
   a {
     color: black;
@@ -39,5 +47,27 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s;
+    &:hover,
+    &:focus {
+      background-color: burlywood;
+    }
+  }
+}
+
+.show-more {
+  background-color: burlywood;
+  color: black;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 200px;
+  transition: 0.2s;
+  display: block;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: #f8e9a1;
   }
 }

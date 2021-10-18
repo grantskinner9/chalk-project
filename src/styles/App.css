@@ -310,8 +310,11 @@ img {
 }
 
 main {
-  background-color: #282828;
   font-family: "Montserrat", sans-serif;
+}
+
+.app-list {
+  background-color: #282828;
 }
 
 .teacher-list {
@@ -330,6 +333,7 @@ main {
   text-align: center;
 }
 .teacher-display .image-container {
+  margin-top: 20px;
   width: 200px;
   height: 200px;
   background-color: white;
@@ -339,10 +343,15 @@ main {
   align-items: center;
 }
 .teacher-display .image-container img {
-  width: 80%;
+  width: 60%;
 }
 .teacher-display .text-container {
   padding: 20px 0;
+  word-break: break-all;
+}
+.teacher-display .text-container .teacher-email {
+  font-size: 0.8rem;
+  padding-top: 20px;
 }
 .teacher-display a {
   color: black;
@@ -351,4 +360,58 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.5s;
+}
+.teacher-display a:hover, .teacher-display a:focus {
+  background-color: burlywood;
+}
+
+.show-more {
+  background-color: burlywood;
+  color: black;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 200px;
+  transition: 0.2s;
+  display: block;
+}
+.show-more:hover, .show-more:focus {
+  cursor: pointer;
+  background-color: #f8e9a1;
+}
+
+.teacher-profile {
+  height: 100vh;
+  background-color: #282828;
+}
+
+.teacher-card {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: center;
+}
+
+.profile-image-section {
+  margin-top: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-image-section img {
+  width: 60%;
+}
+
+.profile-text-section {
+  width: 60%;
+  background-color: white;
+}
+.profile-text-section p {
+  padding: 20px 0;
 }/*# sourceMappingURL=App.css.map */
