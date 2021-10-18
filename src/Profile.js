@@ -35,22 +35,27 @@ const Profile = () => {
             <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
           </div>
           <div className="profile-text-section">
-            <p>First Name: {teacherInfo.first_name}</p>
-            <p>Last Name: {teacherInfo.last_name}</p>
-            <p>Email Address: {teacherInfo.email}</p>
-            <ul>
+            <p><span className="profile-title">First Name:</span> {teacherInfo.first_name}</p>
+            <p><span className="profile-title">Last Name:</span> {teacherInfo.last_name}</p>
+            <p><span className="profile-title">Email Address:</span> {teacherInfo.email}</p>
               {
                 teacherInfo.classes ?
-                teacherInfo.classes.map((subject, index) => {
-                  return (
-                    <li key={index}>
-                      <p>{subject.class}</p>
-                    </li>
-                  )
-                }) :
+                <div className="class-list">
+                  <p><span className="profile-title">Classes: </span></p>
+                  <ul className="subject-class"> {
+                    teacherInfo.classes.map((subject, index) => {
+                      return (
+                        <li key={index}>
+                          <p>{subject.class}</p>
+                        </li>
+                      )
+                    })
+                  }
+                  </ul>
+                </div>  :
+                  
                 null
               }
-            </ul>
           </div>
         </div> :
         null

@@ -22,9 +22,24 @@
   }
 }
 .profile-text-section {
-  width: 60%;
+  width: 50%;
   background-color: white;
+  letter-spacing: 1px;
+  padding: 20px;
   p {
     padding: 20px 0;
+  }
+}
+
+.profile-title {
+  font-weight: bold;
+  color: rgb(106, 106, 106);
+  padding-right: 10px;
+}
+
+.class-list {
+  display: flex;
+  .subject-class {
+    display: flex;
   }
 }

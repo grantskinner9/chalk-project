@@ -409,9 +409,24 @@ main {
 }
 
 .profile-text-section {
-  width: 60%;
+  width: 50%;
   background-color: white;
+  letter-spacing: 1px;
+  padding: 20px;
 }
 .profile-text-section p {
   padding: 20px 0;
+}
+
+.profile-title {
+  font-weight: bold;
+  color: #6a6a6a;
+  padding-right: 10px;
+}
+
+.class-list {
+  display: flex;
+}
+.class-list .subject-class {
+  display: flex;
 }/*# sourceMappingURL=App.css.map */
