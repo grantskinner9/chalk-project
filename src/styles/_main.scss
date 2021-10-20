@@ -1,9 +1,12 @@
 main {
   font-family: "Montserrat", sans-serif;
+  background-color: rgb(40, 40, 40);
+  height: 100vh;
 }
 
 .app-list {
   background-color: rgb(40, 40, 40);
+  padding-bottom: 50px;
 }
 
 .teacher-list {
@@ -65,14 +68,34 @@ main {
   width: 200px;
   transition: 0.2s;
   display: block;
+  margin-top: 50px;
   &:hover,
   &:focus {
     cursor: pointer;
     background-color: burlywood;
   }
 }
-.search {
-  padding: 5px;
-  background-color: #f6f4f2;
-  border-radius: 10px;
+
+.searchbar-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  .searchbar-input {
+    background-color: #f6f4f2;
+    width: 40%;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 25px;
+  }
+}
+
+.search-form {
+  display: flex;
+  justify-content: end;
+  .search-select {
+    border-radius: 5px;
+    margin: 20px 50px;
+    background-color: #f6f4f2;
+    padding: 10px;
+  }
 }

@@ -311,10 +311,13 @@ img {
 
 main {
   font-family: "Montserrat", sans-serif;
+  background-color: #282828;
+  height: 100vh;
 }
 
 .app-list {
   background-color: #282828;
+  padding-bottom: 50px;
 }
 
 .teacher-list {
@@ -376,20 +379,41 @@ main {
   width: 200px;
   transition: 0.2s;
   display: block;
+  margin-top: 50px;
 }
 .show-more:hover, .show-more:focus {
   cursor: pointer;
   background-color: burlywood;
 }
 
-.search {
-  padding: 5px;
+.searchbar-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.searchbar-form .searchbar-input {
   background-color: #f6f4f2;
-  border-radius: 10px;
+  width: 40%;
+  padding: 10px;
+  padding-left: 20px;
+  border-radius: 25px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: end;
+}
+.search-form .search-select {
+  border-radius: 5px;
+  margin: 20px 50px;
+  background-color: #f6f4f2;
+  padding: 10px;
 }
 
 .teacher-profile {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #282828;
 }
 
@@ -397,6 +421,7 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex: 1;
 }
 
 .profile-image-section {
@@ -452,4 +477,26 @@ main {
 
 .home {
   margin: 20px;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 1000px) {
+  .profile-image-section {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 800px) {
+  .teacher-display {
+    width: calc((100% / 2) - 20px);
+  }
+
+  .searchbar-form .searchbar-input {
+    width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .teacher-display {
+    width: 100%;
+  }
 }/*# sourceMappingURL=App.css.map */

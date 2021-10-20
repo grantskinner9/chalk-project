@@ -16,8 +16,6 @@ const Profile = () => {
 
   const [ teacherInfo, setTeacherInfo ] = useState(null);
   const [ allTeachers, setAllTeachers ] = useState([]);
-
-  console.log(teacherInfo)
   
   useEffect(() => {
     fetch('https://cdn.chalk.com/misc/sample_teachers.json')
@@ -34,11 +32,11 @@ const Profile = () => {
       }
       setAllTeachers(data)
     })
-  }, [info.id])
+  }, [info.id]);
 
   return (
-    <div className="teacher-profile">
-      <Link to={`/`}><FontAwesomeIcon className="icon home" icon={faHome}/></Link>
+    <div className="teacher-profile" tabIndex="0">
+      <Link className="icon" to={`/`}><FontAwesomeIcon className="home" icon={faHome} /></Link>
       {
         teacherInfo ?
         <div className="teacher-card">
@@ -49,6 +47,7 @@ const Profile = () => {
               <Link className="icon" to={`/profile/${teacherInfo.id-1}`}><FontAwesomeIcon icon={faChevronLeft}/></Link>
             }
           </div>
+          <div></div>
           <div className="profile-image-section">
             <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
           </div>

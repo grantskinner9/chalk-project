@@ -11,8 +11,6 @@ const List = () => {
   const [ userInput, setUserInput ] = useState('');
   const [ displayTeacher, setDisplayTeacher ] = useState(12);
 
-  console.log(data)
-
   useEffect(() => {
     fetch('https://cdn.chalk.com/misc/sample_teachers.json')
     .then(response => response.json())
