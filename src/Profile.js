@@ -2,12 +2,22 @@ import React from "react";
 import avatar from "./assets/pngegg.png"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const Profile = () => {
 
   const info = useParams();
 
   const [ teacherInfo, setTeacherInfo ] = useState(null);
+  const [ allTeachers, setAllTeachers ] = useState([]);
+
+  console.log(teacherInfo)
   
   useEffect(() => {
     fetch('https://cdn.chalk.com/misc/sample_teachers.json')
@@ -22,15 +32,23 @@ const Profile = () => {
           break;
         }
       }
+      setAllTeachers(data)
     })
   }, [info.id])
 
-
   return (
     <div className="teacher-profile">
+      <Link to={`/`}><FontAwesomeIcon className="icon home" icon={faHome}/></Link>
       {
         teacherInfo ?
         <div className="teacher-card">
+          <div>
+            {
+              teacherInfo.id === 1 ?
+              null :
+              <Link className="icon" to={`/profile/${teacherInfo.id-1}`}><FontAwesomeIcon icon={faChevronLeft}/></Link>
+            }
+          </div>
           <div className="profile-image-section">
             <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
           </div>
@@ -46,16 +64,22 @@ const Profile = () => {
                     teacherInfo.classes.map((subject, index) => {
                       return (
                         <li key={index}>
-                          <p>{subject.class}</p>
+                          {subject.class}
                         </li>
                       )
                     })
                   }
                   </ul>
-                </div>  :
-                  
+                </div>  :                
                 null
               }
+          </div>
+          <div>
+            {
+              teacherInfo.id === allTeachers.length ?
+              null :
+              <Link className="icon" to={`/profile/${teacherInfo.id+1}`}><FontAwesomeIcon icon={faChevronRight}/></Link>
+            }
           </div>
         </div> :
         null

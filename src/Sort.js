@@ -4,8 +4,8 @@ const Sort = ({ userInput, handleOrder, handleChange}) => {
 
 
   return(
-    <div>
-      <form action="#" method="#" className="myForm" name="myForm">
+    <div className="sort">
+      <form action="#" method="#" className="myForm search" name="myForm">
         <label htmlFor="order"></label>
           <select name="order" id="order" onChange={handleOrder}>
             <option value disabled selected>SELECT ORDER</option>
@@ -16,9 +16,9 @@ const Sort = ({ userInput, handleOrder, handleChange}) => {
           </select>
       </form>
 
-      <form className="search-form">
+      <form className="search-form search">
         <label htmlFor="search"></label>
-        <input type="text" className="search" placeholder="search" onChange={handleChange} value={userInput} />
+        <input type="text" placeholder="Search Name" onChange={handleChange} value={userInput} />
       </form>
     </div>
   )

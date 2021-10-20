@@ -367,7 +367,7 @@ main {
 }
 
 .show-more {
-  background-color: burlywood;
+  background-color: #f6f4f2;
   color: black;
   margin: 0 auto;
   border-radius: 20px;
@@ -379,7 +379,13 @@ main {
 }
 .show-more:hover, .show-more:focus {
   cursor: pointer;
-  background-color: #f8e9a1;
+  background-color: burlywood;
+}
+
+.search {
+  padding: 5px;
+  background-color: #f6f4f2;
+  border-radius: 10px;
 }
 
 .teacher-profile {
@@ -390,7 +396,6 @@ main {
 .teacher-card {
   display: flex;
   justify-content: space-evenly;
-  height: 100%;
   align-items: center;
 }
 
@@ -422,11 +427,29 @@ main {
   font-weight: bold;
   color: #6a6a6a;
   padding-right: 10px;
+  text-decoration: underline;
 }
 
 .class-list {
   display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
-.class-list .subject-class {
-  display: flex;
+.class-list li {
+  padding: 5px 0;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.icon {
+  font-size: 3rem;
+  color: white;
+  transition: 0.5s;
+}
+.icon:hover, .icon:focus {
+  color: burlywood;
+}
+
+.home {
+  margin: 20px;
 }/*# sourceMappingURL=App.css.map */
