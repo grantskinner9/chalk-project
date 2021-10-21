@@ -540,6 +540,11 @@ main {
     padding: 10px;
   }
 
+  .profile-image-section {
+    width: 150px;
+    height: 150px;
+  }
+
   .icon {
     font-size: 2rem;
   }
