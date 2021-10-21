@@ -40,7 +40,7 @@ const Profile = () => {
       {
         teacherInfo ?
         <div className="teacher-card">
-          <div>
+          <div className="arrows">
             {
               teacherInfo.id === 1 ?
               null :
@@ -74,7 +74,7 @@ const Profile = () => {
                 }
             </div>
           </div>
-          <div>
+          <div className="arrows">
             {
               teacherInfo.id === allTeachers.length ?
               null :

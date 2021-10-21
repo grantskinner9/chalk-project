@@ -547,4 +547,12 @@ main {
     display: block;
     padding-bottom: 5px;
   }
+
+  .teacher-card-data {
+    justify-content: flex-start;
+  }
+
+  .arrows {
+    align-self: flex-end;
+  }
 }/*# sourceMappingURL=App.css.map */
