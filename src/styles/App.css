@@ -415,6 +415,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: #282828;
+  overflow: scroll;
 }
 
 .teacher-card {
