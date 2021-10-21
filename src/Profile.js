@@ -25,7 +25,7 @@ const Profile = () => {
         if(data[i].avatar === null) {
           data[i].avatar = avatar;
         }
-        if (data[i].id == info.id) {
+        if (data[i].id === parseInt(info.id)) {
           setTeacherInfo(data[i]);
           break;
         }
