@@ -18,11 +18,11 @@
 
   .teacher-card-data {
     flex-direction: column;
-    height: 100%;
   }
   .profile-image-section {
     width: 250px;
     height: 250px;
+    margin-bottom: 20px;
   }
   .profile-text-section {
     width: 80%;
@@ -40,8 +40,8 @@
     padding: 10px;
   }
   .profile-image-section {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   .icon {
     font-size: 2rem;
