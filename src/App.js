@@ -8,11 +8,12 @@ function App() {
   return (
     <Router>
       <main>
-
+        {/* Page opens on List Component on page load.  This displays all Teachers */}
         <Route exact path="/"> 
           <List/>
         </ Route>
 
+        {/* Page routes to Profile Component when user clicks on teacher. */}
         <Route path="/profile/:id">
           <Profile/>
         </Route>
