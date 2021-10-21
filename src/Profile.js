@@ -36,7 +36,7 @@ const Profile = () => {
 
   return (
     <div className="teacher-profile" tabIndex="0">
-      <Link className="icon" to={`/`}><FontAwesomeIcon className="home" icon={faHome} /></Link>
+      <Link className="icon home" to={`/`}><FontAwesomeIcon icon={faHome} /></Link>
       {
         teacherInfo ?
         <div className="teacher-card">
@@ -47,31 +47,32 @@ const Profile = () => {
               <Link className="icon" to={`/profile/${teacherInfo.id-1}`}><FontAwesomeIcon icon={faChevronLeft}/></Link>
             }
           </div>
-          <div></div>
-          <div className="profile-image-section">
-            <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
-          </div>
-          <div className="profile-text-section">
-            <p><span className="profile-title">First Name:</span> {teacherInfo.first_name}</p>
-            <p><span className="profile-title">Last Name:</span> {teacherInfo.last_name}</p>
-            <p><span className="profile-title">Email Address:</span> {teacherInfo.email}</p>
-              {
-                teacherInfo.classes ?
-                <div className="class-list">
-                  <p><span className="profile-title">Classes: </span></p>
-                  <ul className="subject-class"> {
-                    teacherInfo.classes.map((subject, index) => {
-                      return (
-                        <li key={index}>
-                          {subject.class}
-                        </li>
-                      )
-                    })
-                  }
-                  </ul>
-                </div>  :                
-                null
-              }
+          <div className="teacher-card-data">
+            <div className="profile-image-section">
+              <img src={teacherInfo.avatar} alt={`${teacherInfo.first_name} ${teacherInfo.last_name}`} />
+            </div>
+            <div className="profile-text-section">
+              <p><span className="profile-title">First Name:</span> {teacherInfo.first_name}</p>
+              <p><span className="profile-title">Last Name:</span> {teacherInfo.last_name}</p>
+              <p><span className="profile-title">Email Address:</span> {teacherInfo.email}</p>
+                {
+                  teacherInfo.classes ?
+                  <div className="class-list">
+                    <p><span className="profile-title">Classes: </span></p>
+                    <ul className="subject-class"> {
+                      teacherInfo.classes.map((subject, index) => {
+                        return (
+                          <li key={index}>
+                            {subject.class}
+                          </li>
+                        )
+                      })
+                    }
+                    </ul>
+                  </div>  :                
+                  null
+                }
+            </div>
           </div>
           <div>
             {

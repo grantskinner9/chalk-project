@@ -3,6 +3,9 @@
     width: 300px;
     height: 300px;
   }
+  .profile-text-section {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -12,10 +15,36 @@
   .searchbar-form .searchbar-input {
     width: 80%;
   }
+
+  .teacher-card-data {
+    flex-direction: column;
+    height: 100%;
+  }
+  .profile-image-section {
+    width: 250px;
+    height: 250px;
+  }
+  .profile-text-section {
+    width: 80%;
+    p {
+      padding: 10px 0;
+    }
+  }
 }
 
 @media (max-width: 600px) {
   .teacher-display {
     width: 100%;
+  }
+  .profile-text-section {
+    width: 95%;
+    padding: 10px;
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .profile-title {
+    display: block;
+    padding-bottom: 5px;
   }
 }

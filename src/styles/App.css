@@ -421,11 +421,18 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex: 1;
+  height: inherit;
+  word-break: break-all;
+}
+
+.teacher-card-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
 }
 
 .profile-image-section {
-  margin-top: 20px;
   width: 500px;
   height: 500px;
   background-color: white;
@@ -443,6 +450,9 @@ main {
   background-color: white;
   letter-spacing: 1px;
   padding: 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 .profile-text-section p {
   padding: 20px 0;
@@ -476,14 +486,21 @@ main {
 }
 
 .home {
-  margin: 20px;
+  margin: 20px 0 0 20px;
   font-size: 2.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 @media (max-width: 1000px) {
   .profile-image-section {
     width: 300px;
     height: 300px;
+  }
+
+  .profile-text-section {
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 800px) {
@@ -494,9 +511,40 @@ main {
   .searchbar-form .searchbar-input {
     width: 80%;
   }
+
+  .teacher-card-data {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .profile-image-section {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profile-text-section {
+    width: 80%;
+  }
+  .profile-text-section p {
+    padding: 10px 0;
+  }
 }
 @media (max-width: 600px) {
   .teacher-display {
     width: 100%;
+  }
+
+  .profile-text-section {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .profile-title {
+    display: block;
+    padding-bottom: 5px;
   }
 }/*# sourceMappingURL=App.css.map */
